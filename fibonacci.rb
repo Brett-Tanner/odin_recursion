@@ -14,8 +14,13 @@ def fibs(n)
 end
 
 def fibs_rec(n)
-    
+    return [] if n == 0
+    return [0] if n == 1
+    return [0, 1] if n == 2
+    sequence = fibs_rec(n - 1)
+    sequence << sequence[-2] + sequence[-1]
+    sequence
 end
 
 p fibs(8)
-# fibs_rec(8)
+p fibs_rec(8)
